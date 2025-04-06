@@ -115,7 +115,7 @@ def parse_gpx(gpx_path):
     return afstanden, hoogtes, latitudes, longitudes
 
 # === Data voorbereiden ===
-gpx_path = "2025-03-30_2096376466_ET 2025 final.gpx"
+gpx_path = "parcours.gpx"
 x_data, y_data, lat_data, lon_data = parse_gpx(gpx_path)
 
 
