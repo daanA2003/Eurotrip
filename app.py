@@ -115,7 +115,7 @@ def parse_gpx(gpx_path):
     return afstanden, hoogtes, latitudes, longitudes
 
 # === Data voorbereiden ===
-gpx_path = "parcours.gpx"
+gpx_path = gpx_path = os.path.join(os.path.dirname(__file__),"parcours.gpx")
 x_data, y_data, lat_data, lon_data = parse_gpx(gpx_path)
 
 
