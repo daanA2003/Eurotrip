@@ -11,7 +11,8 @@ import os
 import csv
 
 
-DATA_FOLDER = "data"
+DATA_FOLDER = os.path.join(os.path.dirname(__file__), "data")
+
 
 
 
