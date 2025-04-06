@@ -292,7 +292,7 @@ def serve_layout():
             # Box met etappelijnbeheer en grafiek
             html.Div([
                 html.H4("Etappelijn beheer", style={"marginBottom": "5px"}),
-                html.P("Voeg toe en verwijder met bovenstaande knoppen.",
+                html.P("Voeg toe en verwijder met onderstaande knoppen. ",
                        style={"marginBottom": "15px", "fontStyle": "italic"}),
                 html.Div([
                     html.Button(
