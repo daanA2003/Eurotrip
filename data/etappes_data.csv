@@ -1,7 +1,7 @@
 Etappe,Afstand,Stijging,Daling,Teamlid,Tempo,Opmerking
 Etappe 1,23.63,720.4,312.5,Axelle,4:30,testttt
-Etappe 2,34.4,448.5,363.0,Daan,,
-Etappe 3,44.58,379.6,684.8,Elise,,
+Etappe 2,38.25,481.2,485.6,Daan,,
+Etappe 3,40.65,349.1,559.5,Elise,,
 Etappe 4,79.37,726.4,621.6,Ewald,,
 Etappe 5,55.24,190.7,458.0,Kjartan,,
 Etappe 6,72.48,275.8,390.0,Nathan,,
@@ -9,4 +9,4 @@ Etappe 7,46.56,546.4,188.5,Robin,,
 Etappe 8,55.41,456.7,823.9,Sarah,,
 Etappe 9,43.38,217.7,397.7,Axelle,,
 
-_GRENZEN,23.66,58.07,102.75,182.16,237.43,310.01,356.72,412.17
+_GRENZEN,23.66,62.02,102.75,182.16,237.43,310.01,356.72,412.17

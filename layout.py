@@ -63,6 +63,8 @@ def serve_layout():
                 "margin": "0 auto",
                 "marginBottom": "40px"
             }),
+            html.H4(
+                "Selecteer een bestand om te beginnen. Je kan ook een nieuw bestand aanmaken door op de knop 'Start nieuw bestand' te klikken en zo zelf wat te experimenteren en te prutsen. We kunnen afspreken om etappes_data.csv te gebruiken als finaal basisbestand. Laat me weten als iets niet werkt of er iets kan worden toegevoegd om beter te plannen!  "),
 
             # Popup trigger
             dcc.Store(id="show-new-file-modal", data=False),
@@ -108,7 +110,7 @@ def serve_layout():
             # Box met etappelijnbeheer en grafiek
             html.Div([
                 html.H4("Etappelijn beheer", style={"marginBottom": "5px"}),
-                html.P("Voeg toe en verwijder met onderstaande knoppen. Je kan de lijnen verschuiven door erop te klikken en te slepen. De tabel onder de grafiek wordt zo automatisch geüpdatet.",
+                html.P("Voeg toe en verwijder met onderstaande knoppen. Je kan de lijnen verschuiven door erop te klikken en te slepen. De tabel onder de grafiek wordt zo automatisch geüpdatet. Als je een etappelijn een heel klein beetje wil verschuiven (bijvoorbeeld 1-2 millimeter) dan verschuif je hem best eerst wat verder (1 cm) om hem dan terug te verschuiven naar waar je hem juist wou hebben aangezien het soms moeilijk is om zo'n kleine verschuiving te maken in een dynamische grafiek.",
                        style={"marginBottom": "15px", "fontStyle": "italic"}),
                 html.Div([
                     html.Button(
