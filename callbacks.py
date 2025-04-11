@@ -42,6 +42,8 @@ def register_callbacks(app):
         fig = go.Figure()
 
         grenzen = [0] + sorted(grenzen) + [x_data[-1]]
+        legend_shown = set()
+
         for i in range(len(grenzen) - 1):
             start = grenzen[i]
             end = grenzen[i + 1]
@@ -51,15 +53,22 @@ def register_callbacks(app):
             naam = team_data.get(etappe_id)
             kleur = team_kleuren.get(naam, "black")
 
+            showlegend = kleur != "black" and naam not in legend_shown
+            if showlegend:
+                legend_shown.add(naam)
+
             fig.add_trace(go.Scatter(
                 x=np.array(x_data)[mask],
                 y=np.array(y_data)[mask],
                 mode='lines',
                 line=dict(color=kleur, width=3),
-                name=etappe_id if naam else "Niet toegewezen"
+                name=naam if naam else "Niet toegewezen",
+                showlegend=showlegend,
+                legendgroup=naam if naam else "onbekend"
             ))
 
         shapes = []
+        annotations = []
         for gx in sorted(grenzen[1:-1]):
             shapes.append({
                 "type": "line",
@@ -71,17 +80,39 @@ def register_callbacks(app):
                 "editable": True
             })
 
+            annotations.append(dict(
+                x=gx,
+                y=max(y_data) + 70,
+                text=f"{gx:.1f} km",
+                textangle=270,
+                showarrow=False,
+                font=dict(size=10, color="black"),
+                xanchor="center"
+            ))
+
         fig.update_layout(
             height=600,
             xaxis_title="Afstand (km)",
             yaxis_title="Hoogte (m)",
             shapes=shapes,
+            annotations=annotations,
             margin=dict(t=40, r=10, l=10, b=40),
-            showlegend=False,
-            title="Hoogtegrafiek"
+            title="Hoogtegrafiek",
+            legend=dict(
+                x=1,
+                y=0.87,
+                xanchor="right",
+                yanchor="top",
+                bgcolor="rgba(255,255,255,0.7)",
+                bordercolor="lightgrey",
+                borderwidth=1
+            )
         )
 
         return fig
+
+
+
 
     @app.callback(
         Output("etappe-resultaten", "children"),
